@@ -83,7 +83,6 @@ class AudioPlayer {
   Future<void> _audioPlayerStateChange(MethodCall call) async {
     switch (call.method) {
       case "audio.onCurrentPosition":
-        assert(_state == AudioPlayerState.PLAYING);
         _positionController.add(new Duration(milliseconds: call.arguments));
         break;
       case "audio.onStart":
